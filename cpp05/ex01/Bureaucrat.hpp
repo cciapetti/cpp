@@ -2,6 +2,7 @@
 # define BUREAUCRAT_HPP
 # include <iostream>
 #include <ostream>
+class Form;
 
 class Bureaucrat
 {
@@ -16,9 +17,10 @@ class Bureaucrat
         Bureaucrat &operator = (const Bureaucrat &old);
         ~Bureaucrat();
         std::string getName() const;
-        int getGrade() const;
-        void incrementGrade();
-        void decrementGrade();
+        int         getGrade() const;
+        void        incrementGrade();
+        void        decrementGrade();
+        void        signForm(Form &f);
     class GradeTooHighException : public std::exception
     {
         public:
