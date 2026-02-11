@@ -8,8 +8,6 @@ class ShrubberyCreationForm : public AForm
 {
     private:
         std::string target;
-        const int   signGrade;
-        const int   execGrade;
     public:
         ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
@@ -18,7 +16,6 @@ class ShrubberyCreationForm : public AForm
         ~ShrubberyCreationForm();
 
         void execute(Bureaucrat const & executor) const;
-
 };
 
 #endif

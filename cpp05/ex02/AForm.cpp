@@ -43,14 +43,17 @@ std::string AForm::getName() const
 {
     return (this->name);
 }
+
 bool AForm::getSign() const
 {
     return (this->sign);
 }
+
 int AForm::getGradeSign() const
 {
     return (this->grade_to_sign);
 }
+
 int AForm::getGradeExec() const
 {
     return (this->grade_to_execute);
@@ -63,6 +66,7 @@ bool AForm::beSigned(Bureaucrat &b)
     this->sign = true;
     return (this->sign);
 }
+
 std::ostream &operator << (std::ostream &os, AForm &f)
 {
     os << "AForm: " << f.getName() << ", signed: " << f.getSign();

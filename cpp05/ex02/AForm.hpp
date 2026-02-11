@@ -1,6 +1,7 @@
 #ifndef AFORM_HPP
 # define AFORM_HPP
 #include <iostream>
+#include "Bureaucrat.hpp"
 class Bureaucrat;
 
 class AForm
@@ -10,6 +11,7 @@ class AForm
         bool                sign;
         const int           grade_to_sign;
         const int           grade_to_execute;
+
     public:
         AForm();
         AForm(std::string name, int grade_s, int grade_e);
