@@ -72,10 +72,13 @@ std::ostream &operator << (std::ostream &os, const Bureaucrat &b)
 
 void Bureaucrat::signForm(Form &f)
 {
-    bool resp = f.beSigned(*this);
-    if (resp)
-        std::cout << this->getName() << " signed " << f.getName() << std::endl;
-    else
+    try
+    {
+        bool resp = f.beSigned(*this);
+        if (resp)
+            std::cout << this->getName() << " signed " << f.getName() << std::endl;
+    }
+    catch(std::exception &e)
     {
         std::cout << this->getName() << " could not sign " << f.getName() << " because";
         std::cout <<" its grade " << this->getGrade() << " is lower than " << f.getGradeSign() << std::endl;

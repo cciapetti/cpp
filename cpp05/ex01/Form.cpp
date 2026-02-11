@@ -65,7 +65,7 @@ bool Form::beSigned(Bureaucrat &b)
 }
 std::ostream &operator << (std::ostream &os, Form &f)
 {
-    os << f.getName() << ", signed: " << f.getSign() << std::endl;
-    os << "grade to sign: " << f.getGradeSign() << ", grade to execute: " << f.getGradeExec() << std::endl;
+    os << "Form: " << f.getName() << ", signed: " << f.getSign();
+    os << ", grade to sign: " << f.getGradeSign() << ", grade to execute: " << f.getGradeExec() << std::endl;
     return (os);
 }
