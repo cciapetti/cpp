@@ -3,6 +3,7 @@
 # include "AForm.hpp"
 # include <fstream>
 # include <math.h>
+# include <time.h>
 # include <iostream>
 
 class RobotomyRequestForm : public AForm
