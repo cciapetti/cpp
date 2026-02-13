@@ -11,8 +11,11 @@ class Intern
         Intern(const Intern & old);
         Intern &operator = (const Intern &old);
         ~Intern();
-        AForm *makeForm(std::string formName, std::string targetForm);
 
+        AForm *makeForm(std::string formName, std::string targetForm);
+        AForm *makeRobotomyForm(std::string target);
+        AForm *makeShrubberyForm(std::string target);
+        AForm *makePresidentialForm(std::string target);
     class FormNotFound : public std::exception
     {
         public:

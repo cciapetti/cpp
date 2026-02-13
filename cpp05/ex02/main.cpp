@@ -36,40 +36,13 @@
 //     }
 // }
 
-//Testing Robotomy
-// int main()
-// {
-//     Bureaucrat  b("Boss", 40);
-//     RobotomyRequestForm form2("robotomy");
-//     b.signForm(form2);
-//     // std::cout << form2;
-//     try
-//     {
-//         form2.execute(b);
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << std::endl;
-//     }
-    
-//     try
-//     {
-//         b.executeForm(form2);
-//     }
-//     catch(const std::exception& e)
-//     {
-//         std::cerr << e.what() << std::endl;
-//     }
-    
-// }
-
-//Presidential
+// Testing Robotomy
 int main()
 {
-    Bureaucrat  b("boss", 5);
-    PresidentialPardonForm form2;
+    Bureaucrat  b("Boss", 40);
+    RobotomyRequestForm form2("robotomy");
     b.signForm(form2);
-    std::cout << b;
+    // std::cout << form2;
     try
     {
         form2.execute(b);
@@ -89,3 +62,30 @@ int main()
     }
     
 }
+
+//Presidential
+// int main()
+// {
+//     Bureaucrat  b("boss", 5);
+//     PresidentialPardonForm form2("Bender");
+//     b.signForm(form2);
+//     std::cout << b;
+//     try
+//     {
+//         form2.execute(b);
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << std::endl;
+//     }
+    
+//     try
+//     {
+//         b.executeForm(form2);
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << std::endl;
+//     }
+    
+// }

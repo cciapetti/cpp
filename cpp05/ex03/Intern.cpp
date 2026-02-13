@@ -24,28 +24,37 @@ const char* Intern::FormNotFound::what() const throw()
     return "Unrecognized Form Name...";
 }
 
+AForm *Intern::makeRobotomyForm(std::string target)
+{
+    return new RobotomyRequestForm(target);
+}
+AForm *Intern::makeShrubberyForm(std::string target)
+{
+    return new ShrubberyCreationForm(target);
+}
+AForm *Intern::makePresidentialForm(std::string target)
+{
+    return new PresidentialPardonForm(target);
+}
+
 AForm *Intern::makeForm(std::string formName, std::string targetForm)
 {
-    AForm *f;
-    int len = (int) formName.length();
-    for (int i = 0; i < len; i++)
+    AForm *f = NULL;
+    std::string forms[3] = {"robotomy request", "presidential pardon", "shrubbery creation"};
+    AForm *(Intern::*ptr[3])(std::string target) = {&Intern::makeRobotomyForm, &Intern::makePresidentialForm, &Intern::makeShrubberyForm};
+    for (int i = 0; i < (int) formName.length(); i++)
         formName[i] = tolower(formName[i]);
     if (formName != "robotomy request" && formName != "presidential pardon" && formName!= "shrubbery creation")
         throw FormNotFound();
-    switch(len)
+    for (int i = 0; i < 3; i++)
     {
-        case 16:
-            f = new RobotomyRequestForm(targetForm);
+        if (formName == forms[i])
+        {
+            f = (this->*ptr[i])(targetForm);
             std::cout << "Intern creates " << formName << std::endl;
             break;
-        case 19:
-            f = new PresidentialPardonForm(targetForm);
-            std::cout << "Intern creates " << formName << std::endl;
-            break;
-        case 18:
-            f = new ShrubberyCreationForm(targetForm);
-            std::cout << "Intern creates " << formName << std::endl;
-            break;
+        }
     }
     return (f);
 }
+

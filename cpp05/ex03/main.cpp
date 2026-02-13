@@ -8,15 +8,23 @@
 // int main()
 // {
 //     Intern someRandomIntern;
-//     Bureaucrat b("Bur", 2);
-//     AForm* rrf;
+//     try
+//     {
+//         Bureaucrat b("Bur", 149);
+//         AForm* rrf;
 
-//     rrf = someRandomIntern.makeForm("RoBOTOmy REQUESt", "Bender");
-//     b.signForm(*rrf);
+//         rrf = someRandomIntern.makeForm("RoBOTOmy REQUESt", "Bender");
+//         b.signForm(*rrf);
 
-//     b.executeForm(*rrf);
-//     delete rrf;
+//         b.executeForm(*rrf);
+//         delete rrf;
+//     }
+//     catch(const std::exception& e)
+//     {
+//         std::cerr << e.what() << std::endl;
+//     }
 // }
+
 int main()
 {
     Intern someRandomIntern;
@@ -42,48 +50,18 @@ int main()
     try
     {
         b.signForm(*rrf);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    try
-    {
         b.signForm(*scf);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    try
-    {
         b.signForm(*ppf);
     }
     catch(const std::exception& e)
     {
         std::cerr << e.what() << std::endl;
     }
-
     std::cout << "EXECUTE FORM"<< std::endl;
     try
     {
         b.executeForm(*rrf);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    
-    try
-    {
         b.executeForm(*scf);
-    }
-    catch(const std::exception& e)
-    {
-        std::cerr << e.what() << std::endl;
-    }
-    try
-    {
         b.executeForm(*ppf);
     }
     catch(const std::exception& e)

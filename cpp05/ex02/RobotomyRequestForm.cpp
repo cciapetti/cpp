@@ -26,6 +26,7 @@ RobotomyRequestForm::~RobotomyRequestForm(){}
 
 bool RobotomyRequestForm::execute(Bureaucrat const &executor) const
 {
+    srand(time(NULL));
     if (this->getSign() == true && executor.getGrade() <= this->getGradeExec())
     {
         if (rand() % 2 == 0)
