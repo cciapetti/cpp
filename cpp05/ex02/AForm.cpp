@@ -1,7 +1,7 @@
 #include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
-AForm::AForm() : name("default"), grade_to_sign(20), grade_to_execute(5)
+AForm::AForm() : name("Form"), grade_to_sign(20), grade_to_execute(5)
 {
     this->sign = false;
 }

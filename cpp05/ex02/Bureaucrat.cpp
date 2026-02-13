@@ -1,7 +1,7 @@
 #include "Bureaucrat.hpp"
 #include "AForm.hpp"
 
-Bureaucrat::Bureaucrat() :name("default")
+Bureaucrat::Bureaucrat() :name("Bureaucrat")
 {
     this->grade = 150;
 }
@@ -13,7 +13,6 @@ Bureaucrat::Bureaucrat(std::string name, int gr) : name(name)
     else if (gr > 150)
         throw   GradeTooLowException();
     this->grade = gr;
-
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &old):name(old.name)

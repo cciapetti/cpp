@@ -1,7 +1,9 @@
 #include "ShrubberyCreationForm.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm():AForm("Shrubbery Creation Form", 145, 137)
-{}
+{
+    this->target = "Default target";
+}
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target):AForm("Shrubbery Creation Form", 145, 137)
 {
     this->target = target;
@@ -21,7 +23,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(){}
 
 bool ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
-    if (this->getSign() == true && executor.getGrade() < this->getGradeExec())
+    if (this->getSign() == true && executor.getGrade() <= this->getGradeExec())
     {
         std::string     OutputName = this->target + "_shrubbery";
         std::ofstream   OutputFile(OutputName.c_str());
