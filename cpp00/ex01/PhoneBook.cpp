@@ -94,7 +94,7 @@ int	PhoneBook::len_contacts()
 void    PhoneBook::get_contact(std::string index)
 {
 	int	len = len_contacts();
-	int i = atoi( index.c_str() );
+	int i = atoi(index.c_str());
 	if (i > 0 && i <= len)
 	{
 		std::cout << "        first name: " << contacts[i - 1].getFirstName() << std::endl;
