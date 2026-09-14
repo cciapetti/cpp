@@ -1,10 +1,11 @@
-NAME = converter
+NAME = serialize
 
 CC = c++
 
-CFLAGS = -g -Wall -Wextra -Werror -std=c++98
+CFLAGS = -g -Wall -Werror -Wextra -std=c++98
 
-SRC =  ScalarConverter.cpp main.cpp utils.cpp
+SRC = main.cpp Serializer.cpp
+
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
@@ -23,4 +24,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re bonus
+.PHONY: all clean fclean re
